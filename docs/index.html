@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centered Textbox</title>
+  <title>Reveal Answers</title>
   <style>
     body {
       display: flex;
@@ -82,20 +82,26 @@
       }
     }
   </style>
+  <script>
+    function seeAnswers() {
+      var set = document.getElementById("set").value;
+      var book = document.getElementById("book").value;
+      var toVisit = "https://answerviewer.s3.us-east-2.amazonaws.com/answers/" + set + "/" + book + "/index.html";
+      window.location.href = toVisit;
+    }
+  </script>
 </head>
 
 <body>
   <div class="container">
     <div class="title">Reveal Problem Set Answers</div>
     <div class="subtitle">Locate the code at the bottom of the pages on your problem set and enter it in the corresponding textboxes. Please note there is no need to enter the colon character separating the two parts of the code.</div>
-    <form action="https://www.kelvinsantiago.com/answerdecoder/" method="post" style="display: contents;"> 
     <div class="input-group">
-      <input type="text" name="set" placeholder="">
+      <input type="text" id="set" placeholder="">
       <span>:</span>
-      <input type="text" name="book" placeholder="">
+      <input type="text" id="book" placeholder="">
     </div>
-    <input type="submit" value="Click Here to Reveal Answers">
-    </form>
+    <input type="submit" value="Click Here to Reveal Answers" onclick="seeAnswers()">
   </div>
 </body>
 </html>
