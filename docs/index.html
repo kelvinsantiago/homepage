@@ -1,11 +1,101 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <title>KelvinSantiago.com </title>
-      <link rel="me" href="https://mastodon.social/@kelvinsantiago">
-      <link rel="me" href="https://twit.social/@kelvinsantiago">
-   </head>
-   <body>
-      <h1>Welcome to KelvinSantiago.com</h1>
-   </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Textbox</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      gap: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .title {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 0.75em;
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .input-group {
+      display: flex;
+      width: 90%;
+      gap: 10px;
+      align-items: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .input-group input:first-child {
+      width: 73%;
+    }
+
+    .input-group input:last-child {
+      width: 25%;
+    }
+
+    .input-group span {
+      font-size: 1.2em;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      border-color: #007bff;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+
+    @media (min-width: 768px) {
+      .input-group {
+        width: 50%;
+      }
+      .subtitle {
+        width: 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">Reveal Problem Set Answers</div>
+    <div class="subtitle">Locate the code at the bottom of the pages on your problem set and enter it in the corresponding textboxes. Please note there is no need to enter the colon character separating the two parts of the code.</div>
+    <form action="https://www.kelvinsantiago.com/answerdecoder/" method="post" style="display: contents;"> 
+    <div class="input-group">
+      <input type="text" name="set" placeholder="">
+      <span>:</span>
+      <input type="text" name="book" placeholder="">
+    </div>
+    <input type="submit" value="Click Here to Reveal Answers">
+    </form>
+  </div>
+</body>
 </html>
